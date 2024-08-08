@@ -15,10 +15,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const allowedOrigins = ["http://dummy.com"];
-const corsOptions = {
-  origin: allowedOrigins,
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: allowedOrigins,
+// };
+app.use(cors());
 
 app.get("/api/home", (req, res) => {
   console.log("Received a GET request to /");

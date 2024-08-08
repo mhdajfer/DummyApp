@@ -8,13 +8,13 @@ export const HomePage = () => {
   const [userName, setUserName] = useState("");
 
   const getData = async () => {
-    const res = await axios.get("http://dummy.com/api/home");
+    const res = await axios.get("http://localhost:3000/api/home");
     setData(res.data?.message);
   };
 
   const getUser = async (e) => {
     e.preventDefault();
-    const res = await axios.post("http://dummy.com/api/getUser", {
+    const res = await axios.post("http://localhost:3000/api/getUser", {
       userName,
     });
     console.log(res);
@@ -24,7 +24,7 @@ export const HomePage = () => {
   const createUser = async (e) => {
     e.preventDefault();
     console.log(firstName, age);
-    const res = await axios.post("http://dummy.com/api/createUser", {
+    const res = await axios.post("http://localhost:3000/api/createUser", {
       firstName,
       age,
     });
@@ -37,7 +37,7 @@ export const HomePage = () => {
   }, []);
   return (
     <div>
-      <h1>HomePage</h1>
+      <h1>HomePage1</h1>
 
       <h1>Data: {data}</h1>
 
