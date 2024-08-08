@@ -56,4 +56,4 @@ jobs:
       - run: npm install -g skaffold
 
       - name: Deploy
-        run: skaffold run
+        run: skaffold dev
