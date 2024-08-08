@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: express
+  template:
+    metadata:
+      labels:
+        app: express
+    spec:
+      containers:
+        - name: express
+          image: ajfer/express
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: express-srv
+spec:
+  selector:
+    app: express
+  ports:
+    - name: express
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
